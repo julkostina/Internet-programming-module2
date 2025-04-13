@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Data Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Manage Records</h1>
+
+    <div id="create-form">
+        <h2>Create New Record</h2>
+        <form id="new-record-form">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Create</button>
+        </form>
+        <div id="create-message"></div>
+    </div>
+
+    <div id="read-records">
+        <h2>All Records</h2>
+        <ul id="record-list">
+            </ul>
+        <button id="fetch-records">Load Records</button>
+    </div>
+
+    <div id="update-form" style="display: none;">
+        <h2>Update Record</h2>
+        <form id="update-record-form">
+            <input type="hidden" id="update-id" name="id">
+            <div>
+                <label for="update-name">Name:</label>
+                <input type="text" id="update-name" name="name" required>
+            </div>
+            <div>
+                <label for="update-email">Email:</label>
+                <input type="email" id="update-email" name="email" required>
+            </div>
+            <button type="submit">Update</button>
+            <button type="button" id="cancel-update">Cancel</button>
+        </form>
+        <div id="update-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

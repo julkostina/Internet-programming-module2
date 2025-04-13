@@ -82,8 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function editRecord(event) {
         const recordId = event.target.dataset.id;
-        const recordToEdit = records.find(record => record.id === recordId);
-
+        const recordToEdit = records.json.find(record => record.id === recordId);
         if (recordToEdit) {
             document.getElementById('update-id').value = recordToEdit.id;
             document.getElementById('update-name').value = recordToEdit.name;

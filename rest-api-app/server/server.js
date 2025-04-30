@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
+const cors = require('cors');
 const path = require('path');
 const { parseStringPromise, Builder } = require('xml2js'); // Import xml2js for XML parsing and building
 
 const app = express();
+app.use(cors()); // Enable CORS for all routes
 const PORT = 3000;
 const DATA_FILE_JSON = path.join(__dirname, '../data/data.json');
 const DATA_FILE_XML = path.join(__dirname, '../data/data.xml');

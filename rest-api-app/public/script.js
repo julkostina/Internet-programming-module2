@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch and display all records
     async function fetchAllRecords() {
         try {
-            const response = await fetch('/api/records');
+            const response = await fetch('http://localhost:3000/api/records');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
 
         try {
-            const response = await fetch('/api/records', {
+            const response = await fetch('http://localhost:3000/api/records', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('update-email').value;
 
         try {
-            const response = await fetch(`/api/records/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/records/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const recordId = event.target.dataset.id;
         if (confirm(`Are you sure you want to delete record ${recordId}?`)) {
             try {
-                const response = await fetch(`/api/records/${recordId}`, {
+                const response = await fetch(`http://localhost:3000/api/records/${recordId}`, {
                     method: 'DELETE',
                 });
 
